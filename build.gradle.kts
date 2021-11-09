@@ -24,11 +24,23 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2-native-mt")
-	developmentOnly("org.springframework.boot:spring-boot-devtools:2.5.5")
-	runtimeOnly("com.h2database:h2:1.4.200")
+	implementation("org.springframework.boot:spring-boot-devtools:2.5.5")
+	implementation("com.h2database:h2:1.4.200")
 	runtimeOnly("io.r2dbc:r2dbc-h2:0.8.4.RELEASE")
 	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.5")
 	testImplementation("io.projectreactor:reactor-test:3.4.11")
+
+	implementation("com.google.code.gson:gson:2.8.8")
+	implementation("org.springframework.boot:spring-boot-starter-hateoas:2.5.5")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	runtimeOnly("org.postgresql:postgresql:42.2.24.jre7")
+	implementation("org.jetbrains.exposed:exposed-core:0.35.1")
+	implementation("org.jetbrains.exposed:exposed-dao:0.35.1")
+	implementation("org.jetbrains.exposed:exposed-jdbc:0.35.1")
+	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.5") {
+		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
 }
 
 tasks.withType<KotlinCompile> {
