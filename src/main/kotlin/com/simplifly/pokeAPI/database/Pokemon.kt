@@ -5,7 +5,6 @@ import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.springframework.data.r2dbc.repository.Query
 
 object Pokemon: Table() {
     val id = long("id").autoIncrement()

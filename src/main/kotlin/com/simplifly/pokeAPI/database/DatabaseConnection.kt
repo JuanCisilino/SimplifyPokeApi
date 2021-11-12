@@ -6,13 +6,10 @@ import java.sql.DriverManager
 
 import java.sql.SQLException
 
-
-
-
 class DatabaseConnection {
 
     companion object{
-        private const val dbUrl = "jdbc:postgresql://localhost:5432/pokemon"
+        private const val dbUrl = "jdbc:postgresql://0.0.0.0:5439/pokemon"
         private const val dbUser = "postgres"
         private const val dbPass = "sa"
     }
