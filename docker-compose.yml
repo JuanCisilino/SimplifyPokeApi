@@ -1,0 +1,28 @@
+version: '2'
+services:
+  datagres:
+    image: postgres
+    restart: always
+    ports:
+      - "5439:5432"
+    environment:
+      - POSTGRES_PASSWORD=sa
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=pokemon
+    networks:
+      - dir_pokemon
+  datamocks-gateway:
+    image: datamocks-gateway:1
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - datagres
+    networks:
+      - dir_pokemon
+networks:
+  dir_pokemon:
+    external: true
