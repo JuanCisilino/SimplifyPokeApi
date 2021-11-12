@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:10.4
+    environment:
+      POSTGRES_PASSWORD: sa
+      POSTGRES_USER: postgres
+      POSTGRES_DB: pokemon
+    ports:
+      - "5439:5432"
