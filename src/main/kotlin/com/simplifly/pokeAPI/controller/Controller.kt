@@ -70,11 +70,12 @@ class Controller {
 
     @PatchMapping("/{name}")
     suspend fun updatePokemon(@PathVariable name: String): ResponseEntity<Any> {
+        val boolean = Pokemon.getByName(name).favorite?.let { !it }?:true
         val sql = "UPDATE pokemon SET favorite = ? WHERE name = ?"
         try {
             DatabaseConnection().connect().use { conn ->
                 conn?.prepareStatement(sql).use { pstmt ->
-                    pstmt?.setBoolean(1, true)
+                    pstmt?.setBoolean(1, boolean)
                     pstmt?.setString(2, name)
                     pstmt?.executeUpdate()
                 }
