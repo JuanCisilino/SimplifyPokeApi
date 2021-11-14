@@ -19,7 +19,7 @@ import javax.validation.Valid
 
 
 @RestController
-@RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
+//@RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
 class Controller {
 
     companion object{ var realId = 1 }
@@ -40,7 +40,7 @@ class Controller {
         return PagingResponse(total, list)
     }
 
-    @PostMapping("")
+    @GetMapping("/")
     suspend fun updateList(): ResponseEntity<Any?> {
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
