@@ -29,6 +29,12 @@ dependencies {
 	runtimeOnly("io.r2dbc:r2dbc-h2:0.8.4.RELEASE")
 	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
 	testImplementation("io.projectreactor:reactor-test:3.4.12")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib")
+
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("com.zaxxer:HikariCP:4.0.3")
+	runtimeOnly("org.postgresql:postgresql")
 
 	implementation("com.google.code.gson:gson:2.8.9")
 	implementation("org.springframework.boot:spring-boot-starter-hateoas:2.5.6")

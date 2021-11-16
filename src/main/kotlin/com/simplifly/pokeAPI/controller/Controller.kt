@@ -17,7 +17,6 @@ import org.springframework.web.client.exchange
 import java.sql.SQLException
 import javax.validation.Valid
 
-
 @RestController
 //@RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
 class Controller {
@@ -25,7 +24,12 @@ class Controller {
     companion object{ var realId = 1 }
     private val restTemplate = RestTemplate()
 
-    @GetMapping("/{pokemon}")
+    @GetMapping("/{name}/")
+    fun getHola(@PathVariable name: String): ResponseEntity<String>{
+        return ResponseEntity("Hola $name", HttpStatus.OK)
+    }
+
+/*    @GetMapping("/{pokemon}")
     @ResponseBody
     suspend fun getByName(@PathVariable pokemon: String): ResponseEntity<PokeLocal>{
         val selectedPokemon = Pokemon.getByName(pokemon)
@@ -196,5 +200,5 @@ class Controller {
         pokemon.evolvesFrom
             ?.let { pokemon.evolvesTo = if (thirdForm == pokemon.name) null else thirdForm }
             ?:run { pokemon.evolvesTo = secondForm }
-    }
+    }*/
 }
