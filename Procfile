@@ -1,4 +1,5 @@
-web: kotlin $JAVA_OPTS -cp gradlew com.simplifly.pokeAPI.PokeApiApplication --server.port=8080
+web: java $JAVA_OPTS -cp gradlew com.simplifly.pokeAPI.PokeApiApplication --server.port=8080
+
 
 
 
