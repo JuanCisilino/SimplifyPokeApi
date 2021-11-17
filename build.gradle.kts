@@ -55,7 +55,9 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "11"
 	}
 }
-
+tasks.create("stage") {
+	dependsOn("installDist")
+}
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
