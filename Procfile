@@ -1,4 +1,4 @@
-web: java $JAVA_OPTS -cp gradlew com.simplify.pokeAPI.PokeApiApplication
+web: ./build/install/poke-api/bin/poke-api
 
 
 
