@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.responses
+package com.simplify.pokeAPI.responses
 
 data class SpecieResponse(val evolution_chain: Evolution, val flavor_text_entries: ArrayList<Flavors>,
                           val evolves_from_species: EvolvesFrom?)

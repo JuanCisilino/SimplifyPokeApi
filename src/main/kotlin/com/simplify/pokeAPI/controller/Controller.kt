@@ -1,10 +1,10 @@
-package com.simplifly.pokeAPI.controller
+package com.simplify.pokeAPI.controller
 
-import com.simplifly.pokeAPI.database.DatabaseConnection
-import com.simplifly.pokeAPI.database.Pokemon
-import com.simplifly.pokeAPI.models.PokeLocal
-import com.simplifly.pokeAPI.requests.PokemonRequest
-import com.simplifly.pokeAPI.responses.*
+import com.simplify.pokeAPI.database.DatabaseConnection
+import com.simplify.pokeAPI.database.Pokemon
+import com.simplify.pokeAPI.models.PokeLocal
+import com.simplify.pokeAPI.requests.PokemonRequest
+import com.simplify.pokeAPI.responses.*
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.http.HttpMethod

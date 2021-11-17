@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.database
+package com.simplify.pokeAPI.database
 
 import org.jetbrains.exposed.sql.Database
 import java.sql.Connection

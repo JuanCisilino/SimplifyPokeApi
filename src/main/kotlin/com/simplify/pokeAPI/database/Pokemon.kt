@@ -1,6 +1,6 @@
-package com.simplifly.pokeAPI.database
+package com.simplify.pokeAPI.database
 
-import com.simplifly.pokeAPI.models.PokeLocal
+import com.simplify.pokeAPI.models.PokeLocal
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.selectAll
@@ -31,7 +31,7 @@ object Pokemon: Table() {
         return@transaction convertToPokemon(selected)
     }
 
-    private fun convertToPokemon(raw: ResultRow?): PokeLocal{
+    private fun convertToPokemon(raw: ResultRow?): PokeLocal {
         return PokeLocal(
             id = raw?.get(id),
             name = raw?.get(name),

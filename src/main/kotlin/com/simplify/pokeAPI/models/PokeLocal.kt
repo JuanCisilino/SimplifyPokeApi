@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.models
+package com.simplify.pokeAPI.models
 
 data class PokeLocal(
     var id: Long?,

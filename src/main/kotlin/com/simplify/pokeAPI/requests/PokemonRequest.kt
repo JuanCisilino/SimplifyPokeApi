@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.requests
+package com.simplify.pokeAPI.requests
 
 import javax.validation.constraints.NotEmpty
 
