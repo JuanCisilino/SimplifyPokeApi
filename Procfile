@@ -1,5 +1,4 @@
-web: ./build/install/poke-api/bin/poke-api
-
+web: java -jar build/libs/poke-api.jar --server.port=$PORT
 
 
 
