@@ -1,4 +1,4 @@
-web: ./build/install/poke-api/bin/poke-api --server.port=8080
+web: ./build/install/simplify-poke-api/bin/simplify-poke-api --server.port=8080
 
 
 
