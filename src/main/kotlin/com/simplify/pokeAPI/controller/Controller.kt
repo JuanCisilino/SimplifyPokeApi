@@ -18,18 +18,13 @@ import java.sql.SQLException
 import javax.validation.Valid
 
 @RestController
-//@RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
+@RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
 class Controller {
 
     companion object{ var realId = 1 }
     private val restTemplate = RestTemplate()
 
-    @GetMapping("/{name}")
-    fun getHola(@PathVariable name: String): ResponseEntity<String>{
-        return ResponseEntity("Hola $name", HttpStatus.OK)
-    }
-
-/*    @GetMapping("/{pokemon}")
+    @GetMapping("/{pokemon}")
     @ResponseBody
     suspend fun getByName(@PathVariable pokemon: String): ResponseEntity<PokeLocal>{
         val selectedPokemon = Pokemon.getByName(pokemon)
@@ -44,7 +39,7 @@ class Controller {
         return PagingResponse(total, list)
     }
 
-    @GetMapping("/")
+    @PostMapping("/")
     suspend fun updateList(): ResponseEntity<Any?> {
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
@@ -200,5 +195,5 @@ class Controller {
         pokemon.evolvesFrom
             ?.let { pokemon.evolvesTo = if (thirdForm == pokemon.name) null else thirdForm }
             ?:run { pokemon.evolvesTo = secondForm }
-    }*/
+    }
 }
