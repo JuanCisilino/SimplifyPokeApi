@@ -1,4 +1,4 @@
-web: ./build/install/poke-api/bin/poke-api --server.port=8080
+web: kotlin $JAVA_OPTS -cp gradlew com.simplifly.pokeAPI.PokeApiApplication --server.port=8080
 
 
 
