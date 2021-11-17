@@ -1,4 +1,4 @@
-web: ./build/install/poke-api/bin/poke-api
+web: ./build/install/poke-api/bin/poke-api --server.port=8080
 
 
 
