@@ -24,7 +24,7 @@ class Controller {
     companion object{ var realId = 1 }
     private val restTemplate = RestTemplate()
 
-    @GetMapping("/{name}/")
+    @GetMapping("/{name}")
     fun getHola(@PathVariable name: String): ResponseEntity<String>{
         return ResponseEntity("Hola $name", HttpStatus.OK)
     }
