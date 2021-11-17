@@ -1,4 +1,4 @@
-web: ./build/install/poke-api/bin/poke-api --server.port=$PORT
+web: ./build/install/poke-api/bin/poke-api
 
 
 
