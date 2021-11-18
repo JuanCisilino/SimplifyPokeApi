@@ -1,12 +1,9 @@
 package com.simplify.pokeAPI.database
 
-import com.sun.jndi.toolkit.url.Uri
 import org.jetbrains.exposed.sql.Database
 import java.sql.Connection
 import java.sql.DriverManager
-
 import java.sql.SQLException
-
 
 class DatabaseConnection {
 
@@ -17,7 +14,7 @@ class DatabaseConnection {
     }
 
     fun connectDatabase() =
-        Database.connect(Uri(dbUrl).host, driver = "org.postgresql.Driver", user = dbUser, password = dbPass)
+        Database.connect(dbUrl, driver = "org.postgresql.Driver", user = dbUser, password = dbPass)
 
     @Throws(SQLException::class)
     fun connect(): Connection? = DriverManager.getConnection(dbUrl, dbUser, dbPass)
