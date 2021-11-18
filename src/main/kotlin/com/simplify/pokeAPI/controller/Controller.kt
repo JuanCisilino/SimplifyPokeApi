@@ -44,7 +44,7 @@ class Controller {
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
                 HttpMethod.GET, null)
-        val listSize = Pokemon.getAll().size
+        val listSize = 1
         if (listSize == response.body?.results?.size) return ResponseEntity("Up to Date", HttpStatus.OK)
         updateList(response)
         return ResponseEntity("Updated Successfully", HttpStatus.OK)
