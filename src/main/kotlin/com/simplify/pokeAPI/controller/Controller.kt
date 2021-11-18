@@ -122,7 +122,7 @@ class Controller {
 
     private fun setPokemon(results: Results): PokeLocal {
         val pokemon = PokeLocal(
-            id = realId.toLong(),
+            id = realId,
             name = results.name,
             baseUrl = results.url,
             nickName = null,
