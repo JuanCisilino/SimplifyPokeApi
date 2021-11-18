@@ -102,6 +102,7 @@ class Controller {
 
     private fun insertToDb(pokemon: PokeLocal) {
         Pokemon.insert {
+            it[id] = realId
             it[name] = pokemon.name?:""
             it[nickName] = ""
             it[baseUrl] = pokemon.baseUrl?:""

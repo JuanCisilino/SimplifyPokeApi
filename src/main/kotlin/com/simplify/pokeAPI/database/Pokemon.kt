@@ -7,7 +7,7 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object Pokemon: Table() {
-    val id = long("id").autoIncrement()
+    val id = integer("id")
     val name = varchar("name", 100)
     val nickName = varchar("nick_name", 3000)
     val favorite = bool("favorite")

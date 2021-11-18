@@ -1,7 +1,7 @@
 package com.simplify.pokeAPI.models
 
 data class PokeLocal(
-    var id: Long?,
+    var id: Int?,
     var name: String?,
     var nickName: String?,
     var baseUrl: String?,
