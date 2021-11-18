@@ -10,9 +10,9 @@ import java.sql.SQLException
 class DatabaseConnection {
 
     companion object{
-        private const val dbUrl = "jdbc:postgresql://0.0.0.0:5439/pokemon"
-        private const val dbUser = "postgres"
-        private const val dbPass = "sa"
+        private const val dbUrl = "postgres://uqjzaykkfxetus:6f7169a2f6313a8cdeee8550689bd38dca6f89f13ca7fe250d1a309a4da30146@ec2-54-160-103-135.compute-1.amazonaws.com:5432/d3odencv819j1f"
+        private const val dbUser = "uqjzaykkfxetus"
+        private const val dbPass = "6f7169a2f6313a8cdeee8550689bd38dca6f89f13ca7fe250d1a309a4da30146"
     }
 
     fun connectDatabase() =

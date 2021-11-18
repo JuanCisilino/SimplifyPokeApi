@@ -88,7 +88,9 @@ class Controller {
     private fun updateList(response: ResponseEntity<ListResponse>) {
         transaction {
             addLogger(StdOutSqlLogger)
-            SchemaUtils.drop (Pokemon)
+            // IMPORTANTE --- La primera vez debe estar comentada la linea de drop para que pueda crear el
+            //                objeto pokemon en la base de datos
+            // SchemaUtils.drop (Pokemon)
             SchemaUtils.create (Pokemon)
             response.body?.results?.forEach { result ->
                 realId = result.url.takeLast(10).filter { it.isDigit() }.toInt()
