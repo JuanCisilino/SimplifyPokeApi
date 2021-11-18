@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.responses
+package com.simplify.pokeAPI.responses
 
 
 data class PokeResponse(val moves: ArrayList<Moves>, val species: Species, val sprites: Sprites, val types: ArrayList<Types>)

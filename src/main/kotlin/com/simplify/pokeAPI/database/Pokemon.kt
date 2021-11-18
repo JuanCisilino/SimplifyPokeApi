@@ -1,13 +1,13 @@
-package com.simplifly.pokeAPI.database
+package com.simplify.pokeAPI.database
 
-import com.simplifly.pokeAPI.models.PokeLocal
+import com.simplify.pokeAPI.models.PokeLocal
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object Pokemon: Table() {
-    val id = long("id").autoIncrement()
+    val id = integer("id")
     val name = varchar("name", 100)
     val nickName = varchar("nick_name", 3000)
     val favorite = bool("favorite")
@@ -31,7 +31,7 @@ object Pokemon: Table() {
         return@transaction convertToPokemon(selected)
     }
 
-    private fun convertToPokemon(raw: ResultRow?): PokeLocal{
+    private fun convertToPokemon(raw: ResultRow?): PokeLocal {
         return PokeLocal(
             id = raw?.get(id),
             name = raw?.get(name),

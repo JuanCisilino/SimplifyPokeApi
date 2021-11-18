@@ -1,10 +1,10 @@
-package com.simplifly.pokeAPI.controller
+package com.simplify.pokeAPI.controller
 
-import com.simplifly.pokeAPI.database.DatabaseConnection
-import com.simplifly.pokeAPI.database.Pokemon
-import com.simplifly.pokeAPI.models.PokeLocal
-import com.simplifly.pokeAPI.requests.PokemonRequest
-import com.simplifly.pokeAPI.responses.*
+import com.simplify.pokeAPI.database.DatabaseConnection
+import com.simplify.pokeAPI.database.Pokemon
+import com.simplify.pokeAPI.models.PokeLocal
+import com.simplify.pokeAPI.requests.PokemonRequest
+import com.simplify.pokeAPI.responses.*
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.springframework.http.HttpMethod
@@ -16,7 +16,6 @@ import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.exchange
 import java.sql.SQLException
 import javax.validation.Valid
-
 
 @RestController
 @RequestMapping("/pokemon", produces = [MediaType.APPLICATION_JSON_VALUE])
@@ -40,7 +39,7 @@ class Controller {
         return PagingResponse(total, list)
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     suspend fun updateList(): ResponseEntity<Any?> {
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
@@ -89,6 +88,9 @@ class Controller {
     private fun updateList(response: ResponseEntity<ListResponse>) {
         transaction {
             addLogger(StdOutSqlLogger)
+            // IMPORTANTE --- La primera vez debe estar comentada la linea de drop para que pueda crear el
+            //                objeto pokemon en la base de datos, tambien cambiar el pedido del metodo updateList()
+            //                cambiar Pokemon.getAll().size por 1
             SchemaUtils.drop (Pokemon)
             SchemaUtils.create (Pokemon)
             response.body?.results?.forEach { result ->
@@ -101,6 +103,7 @@ class Controller {
 
     private fun insertToDb(pokemon: PokeLocal) {
         Pokemon.insert {
+            it[id] = realId
             it[name] = pokemon.name?:""
             it[nickName] = ""
             it[baseUrl] = pokemon.baseUrl?:""
@@ -120,7 +123,7 @@ class Controller {
 
     private fun setPokemon(results: Results): PokeLocal {
         val pokemon = PokeLocal(
-            id = realId.toLong(),
+            id = realId,
             name = results.name,
             baseUrl = results.url,
             nickName = null,

@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.responses
+package com.simplify.pokeAPI.responses
 
 data class PagingResponse<T>(
     val total: Long,

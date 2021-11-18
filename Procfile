@@ -1,2 +1,3 @@
-web: java -jar build/libs/com.simplify.pokeAPI.jar --server.port=$PORT
+web: java -Dserver.port=$PORT -jar build/libs/poke-api-0.0.1-SNAPSHOT.jar
+
 

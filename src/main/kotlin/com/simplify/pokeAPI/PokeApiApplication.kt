@@ -1,6 +1,6 @@
-package com.simplifly.pokeAPI
+package com.simplify.pokeAPI
 
-import com.simplifly.pokeAPI.database.DatabaseConnection
+import com.simplify.pokeAPI.database.DatabaseConnection
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

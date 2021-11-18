@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI
+package com.simplify.pokeAPI
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

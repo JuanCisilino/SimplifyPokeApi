@@ -1,4 +1,4 @@
-package com.simplifly.pokeAPI.responses
+package com.simplify.pokeAPI.responses
 
 data class EvolutionResponse(val chain: Chain?)
 data class Chain(val evolves_to: ArrayList<SecondForm>?)
