@@ -30,6 +30,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
 	testImplementation("io.projectreactor:reactor-test:3.4.12")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
+	implementation("org.apache.tomcat:tomcat-jdbc:9.0.2")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter")
