@@ -18,6 +18,7 @@ repositories {
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.5.2-native-mt")
 
 	implementation("org.springframework.boot:spring-boot-starter-web:2.5.6")
 	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc:2.5.6")
