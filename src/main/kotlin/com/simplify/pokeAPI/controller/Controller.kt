@@ -24,7 +24,7 @@ class Controller {
         service.getPaginated(pageNo, pageSize)
 
     @PostMapping("/")
-    suspend fun updateList(): ResponseEntity<Any?> = service.updateList()
+    suspend fun updateList() = service.updateList()
 
     @PatchMapping("")
     suspend fun updateNickNamePokemon(@RequestBody @Valid pokemonRequest: PokemonRequest) =

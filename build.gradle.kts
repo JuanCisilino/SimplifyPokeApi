@@ -28,10 +28,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-webflux:2.5.6")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.5.6")
 
-	implementation("com.h2database:h2:1.4.200")
 	runtimeOnly("org.postgresql:postgresql:42.3.1")
 	runtimeOnly("io.r2dbc:r2dbc-h2:0.8.4.RELEASE")
-	implementation("org.apache.tomcat:tomcat-jdbc:9.0.2")
+	implementation("org.apache.tomcat:tomcat-jdbc:10.0.12")
 
 	implementation("org.jetbrains.exposed:exposed-core:0.36.1")
 	implementation("org.jetbrains.exposed:exposed-dao:0.36.1")
