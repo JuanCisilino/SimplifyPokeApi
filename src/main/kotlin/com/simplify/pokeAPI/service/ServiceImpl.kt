@@ -1,6 +1,5 @@
 package com.simplify.pokeAPI.service
 
-import com.simplify.pokeAPI.controller.Controller
 import com.simplify.pokeAPI.database.DatabaseConnection
 import com.simplify.pokeAPI.database.Pokemon
 import com.simplify.pokeAPI.models.PokeLocal
