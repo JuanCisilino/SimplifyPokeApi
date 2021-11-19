@@ -29,7 +29,7 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql:42.3.1")
 	runtimeOnly("io.r2dbc:r2dbc-h2:0.8.4.RELEASE")
 	implementation("org.apache.tomcat:tomcat-jdbc:9.0.2")
-
+	
 	implementation("org.jetbrains.exposed:exposed-core:0.36.1")
 	implementation("org.jetbrains.exposed:exposed-dao:0.36.1")
 	implementation("org.jetbrains.exposed:exposed-jdbc:0.36.1")
