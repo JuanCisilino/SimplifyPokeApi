@@ -31,6 +31,12 @@ class ServiceImpl {
         return PagingResponse(total, list)
     }
 
+    fun getFavorites() = try {
+        ResponseEntity(Pokemon.getFavorites(), HttpStatus.OK)
+    } catch (ex: SQLException){
+        ResponseEntity(ex.message, HttpStatus.BAD_REQUEST)
+    }
+
     fun updateNickNamePokemon(pokemonRequest: PokemonRequest): ResponseEntity<Any>{
         val sql = "UPDATE pokemon SET nick_name = ? WHERE name = ?"
         return try {
@@ -65,13 +71,13 @@ class ServiceImpl {
     }
 
     fun updateList(): ResponseEntity<Any?>{
+        val dblist = Pokemon.getAll()
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
                 HttpMethod.GET, null)
-        val listSize = Pokemon.getAll().size
-        if (listSize == response.body?.results?.size) return ResponseEntity("Up to Date", HttpStatus.OK)
+        if (dblist.size == response.body?.results?.size) return ResponseEntity(dblist, HttpStatus.OK)
         updateList(response)
-        return ResponseEntity("Updated Successfully", HttpStatus.OK)
+        return ResponseEntity(Pokemon.getAll(), HttpStatus.OK)
     }
 
     private fun updateList(response: ResponseEntity<ListResponse>) {

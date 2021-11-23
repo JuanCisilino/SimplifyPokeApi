@@ -31,6 +31,9 @@ object Pokemon: Table() {
         return@transaction convertToPokemon(selected)
     }
 
+    fun getFavorites(): List<Any> = transaction {
+        Pokemon.selectAll().filter { it[favorite] }.map { convertToPokemon(it) }.sortedBy { it.id } }
+
     private fun convertToPokemon(raw: ResultRow?): PokeLocal {
         return PokeLocal(
             id = raw?.get(id),
