@@ -23,6 +23,9 @@ class Controller {
     suspend fun paginatedList(@RequestParam pageNo: Int, @RequestParam pageSize: Int) =
         service.getPaginated(pageNo, pageSize)
 
+    @GetMapping("/favorites")
+    suspend fun getFavorites() = service.getFavorites()
+
     @PostMapping("/")
     suspend fun updateList(): ResponseEntity<Any?> = service.updateList()
 

@@ -31,6 +31,12 @@ class ServiceImpl {
         return PagingResponse(total, list)
     }
 
+    fun getFavorites() = try {
+        ResponseEntity(Pokemon.getFavorites(), HttpStatus.OK)
+    } catch (ex: SQLException){
+        ResponseEntity(ex.message, HttpStatus.BAD_REQUEST)
+    }
+
     fun updateNickNamePokemon(pokemonRequest: PokemonRequest): ResponseEntity<Any>{
         val sql = "UPDATE pokemon SET nick_name = ? WHERE name = ?"
         return try {
