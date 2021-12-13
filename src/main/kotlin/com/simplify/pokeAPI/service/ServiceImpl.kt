@@ -71,8 +71,8 @@ class ServiceImpl {
     }
 
     fun updateList(): ResponseEntity<Any?>{
-        val dblist = arrayListOf<Any>()
-//        val dblist = Pokemon.getAll()
+//        val dblist = arrayListOf<Any>()
+        val dblist = Pokemon.getAll()
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
                 HttpMethod.GET, null)
@@ -87,7 +87,7 @@ class ServiceImpl {
             // IMPORTANTE --- La primera vez debe estar comentada la linea de drop para que pueda crear el
             //                objeto pokemon en la base de datos, tambien cambiar el pedido del metodo updateList()
             //                cambiar Pokemon.getAll().size por 1
-//            SchemaUtils.drop (Pokemon)
+            SchemaUtils.drop (Pokemon)
             SchemaUtils.create (Pokemon)
             response.body?.results?.forEach { result ->
                 realId = result.url.takeLast(10).filter { it.isDigit() }.toInt()
