@@ -71,7 +71,8 @@ class ServiceImpl {
     }
 
     fun updateList(): ResponseEntity<Any?>{
-        val dblist = Pokemon.getAll()
+        val dblist = arrayListOf<Any>()
+//        val dblist = Pokemon.getAll()
         val response : ResponseEntity<ListResponse> =
             restTemplate.exchange("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1500",
                 HttpMethod.GET, null)
